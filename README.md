@@ -54,9 +54,7 @@ pytest
 
 Пример теста для функции маскирования карты:
 
-python
-
-@pytest.mark.parametrize("card_number, expected", [
+```@pytest.mark.parametrize("card_number, expected", [
     ("7000792289606361", "7000 79** **** 6361"),
     ("1234567890123456", "1234 56** **** 3456"),
     ("", ""),
@@ -68,4 +66,6 @@ def test_get_mask_card_number(card_number, expected):
             get_mask_card_number(card_number)
     else:
         assert get_mask_card_number(card_number) == expected
+```
+
 Таким образом, каждый тест проверяет не только правильное выполнение функции, но и корректную обработку ошибок.
